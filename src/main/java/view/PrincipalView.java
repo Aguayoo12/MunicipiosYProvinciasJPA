@@ -228,6 +228,8 @@ public class PrincipalView extends JFrame {
 	private void save() {
 		Municipio m = (Municipio)jcbMunicipio.getSelectedItem();
 		Provincia p = (Provincia) jcbProvincia.getSelectedItem();
-		MunicipioController.update(m, jtfNombreMunicipio.getText(), p);
+		m.setNombre(jtfNombreMunicipio.getText());
+		m.setProvincia(p);
+		MunicipioController.update(m);
 	}
 }

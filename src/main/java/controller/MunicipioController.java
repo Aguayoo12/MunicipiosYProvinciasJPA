@@ -21,12 +21,10 @@ public class MunicipioController {
 		return municipio;
 	}
 	
-	public static void update(Municipio m, String nombre, Provincia p) {
+	public static void update(Municipio m) {
 		EntityManager em = entityManagerFactory.createEntityManager();
 		
 		em.getTransaction().begin();
-		m.setNombre(nombre);
-		m.setProvincia(p);
 		em.merge(m);
 		System.out.println("He realizado la modificacion");
 		em.getTransaction().commit();
